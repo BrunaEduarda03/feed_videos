@@ -6,12 +6,14 @@
     <div
       className="p-5 flex flex-col justify-center items-center bg-purpleDark"
     >
-      <img
-        src="../assets/videotopia.png"
-        alt="logo footer"
-        height="30"
-        width="250"
-      />
+      <router-link to="/feed-videos">
+        <img
+          src="../assets/videotopia.png"
+          alt="logo footer"
+          height="30"
+          width="250"
+        />
+      </router-link>
       <p className="mt-1 font-medium text-sm text-walterWhite">
         Todos os direitos reservados!
       </p>
