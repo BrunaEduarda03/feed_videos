@@ -14,6 +14,7 @@ const routes = [
     name: "SignIn",
     component: SignIn,
     path: "/SignIn",
+    beforeEnter: auth,
   },
   {
     name: "feed-videos",
