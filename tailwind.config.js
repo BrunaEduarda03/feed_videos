@@ -15,6 +15,7 @@ module.exports = {
         grayLighter: "#BBBFBF",
         walterWhite: "#F5F5F5",
         redPrimary: "#FE3838",
+        pinkLighter: "#D4B0B5",
       },
       textColor: {
         dark: "#717171",
