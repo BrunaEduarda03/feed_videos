@@ -53,7 +53,13 @@
 
 <script>
 import { required, minLength, email } from "vuelidate/lib/validators";
-
+import { toast } from "vue3-toastify";
+import "vue3-toastify/dist/index.css";
+const passwordStrong = (value) => {
+  return /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/.test(
+    value
+  );
+};
 export default {
   data() {
     return {
@@ -75,30 +81,38 @@ export default {
       password: {
         required,
         minLength: minLength(6),
+        passwordStrong,
       },
     },
   },
 
   methods: {
     login() {
-      // Mocked user data
       const mockedUser = {
         email: "user@example.com",
-        password: "password123",
+        password: "#Password123",
       };
       if (
         this.form.email === mockedUser.email &&
         this.form.password === mockedUser.password
       ) {
-        // Store user information in Local Storage
+        toast("Bem-vindo de volta", {
+          position: "top-right",
+          duration: 3000,
+        });
+
         localStorage.setItem("user", JSON.stringify(mockedUser));
-        // Redirect to the feed
         this.$router.push("/feed-videos");
       } else {
         this.errorMessage = "Invalid email or password. Please try again.";
         this.$router.push("/SignIn");
         this.form.email = "";
         this.form.password = "";
+        toast("Erro ao logar", {
+          position: "top-right",
+          duration: 3000,
+          type: "error",
+        });
       }
     },
   },
