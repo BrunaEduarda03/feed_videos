@@ -1,5 +1,7 @@
 <template>
-  <footer class="bg-purpleDark fixed bottom-0 left-0 w-full text-center">
+  <footer
+    class="bg-purpleDark h-screen mt-20 bottom-0 left-0 w-full text-center"
+  >
     <div class="container mx-auto w-full h-[1px] bg-grayLighter"></div>
     <div class="p-5 flex flex-col justify-center items-center">
       <router-link to="/feed-videos">

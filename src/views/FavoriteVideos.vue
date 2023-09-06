@@ -8,7 +8,7 @@
       <div className=" flex flex-col  mt-5 ">
         <router-link to="/feed-videos">
           <button
-            class="bg-primaryDarker hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-md"
+            class="bg-primaryDarker hover:bg-pinkLighter text-white font-semibold py-2 px-4 rounded-md"
           >
             Voltar para a página inicial
           </button>

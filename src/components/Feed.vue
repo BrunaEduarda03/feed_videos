@@ -1,5 +1,5 @@
-<template>
-  <section class="container mx-auto p-5 bg-purpleDark h-screen">
+<template class="bg-green-700">
+  <section class="container mx-auto p-5">
     <div
       v-if="filteredVideos.length !== 0"
       class="flex items-center justify-center mt-10"
@@ -36,7 +36,7 @@
     </modal>
     <div
       v-if="filteredVideos.length === 0"
-      class="text-redPrimary font-semibold flex items-center justify-center mt-10"
+      class="text-redPrimary font-semibold flex items-center justify-center mt-20"
     >
       Ops. Não foram encontrados vídeos correspondentes a pesquisa!
     </div>
