@@ -19,7 +19,7 @@
 
         <slot></slot>
         <p>{{ description }}</p>
-        <div class="flex justify-evenly items-center mt-5">
+        <div class="flex justify-evenly items-center mt-5 gap-5">
           <router-link to="/feed-videos">
             <button
               class="bg-primaryDarker hover:bg-pinkLighter text-white font-semibold py-2 px-4 rounded-md"

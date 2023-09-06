@@ -1,4 +1,4 @@
-<template class="bg-green-700">
+<template>
   <section class="container mx-auto p-5">
     <div class="flex items-center justify-center mt-20 lg:mt-10">
       <h2
@@ -15,7 +15,7 @@
         <img
           :src="modalImageUrl"
           :alt="modal"
-          style="object-fit: cover"
+          style="object-fit: contain"
           class="rounded-lg cursor-pointer"
           hidden
         />
