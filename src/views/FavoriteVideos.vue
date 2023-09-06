@@ -1,6 +1,8 @@
 <template>
-  <Header />
-  <Footer />
+  <div class="h-screen">
+    <Header />
+    <Footer />
+  </div>
 </template>
 
 <script>

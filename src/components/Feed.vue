@@ -11,11 +11,11 @@
     <LoadingSpinner :is-loading="isLoading" />
 
     <modal :title="modalTitle" v-if="isModalOpen" @close="closeModal">
-      <div class="relative h-[350px] w-[350px]">
+      <div class="relative h-full w-full">
         <img
           :src="modalImageUrl"
           :alt="modal"
-          style="object-fit: cover"
+          style="object-fit: cover; width: 100%; height: 100%"
           class="rounded-lg cursor-pointer"
         />
         <a

@@ -37,7 +37,7 @@ export default {
 
 <style scoped>
 .modal-overlay {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.7);
   position: fixed;
   top: 0;
   left: 0;
@@ -45,6 +45,6 @@ export default {
   bottom: 0;
 }
 .modal-container {
-  transition: all 0.3s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 </style>
