@@ -2,7 +2,7 @@
   <section class="container mx-auto p-5">
     <div
       v-if="filteredVideos.length !== 0"
-      class="flex items-center justify-center mt-10"
+      class="flex items-center justify-center mt-20 lg:mt-10"
     >
       <h2
         class="px-5 font-medium text-grayLighter whitespace-nowrap lg:text-xl flex justify-center"

@@ -1,17 +1,18 @@
 <template>
   <header
-    class="top-0 left-0 flex-col lg:flex-row container mx-auto py-0 h-[93px] flex lg:justify-between items-center lg:border-b lg:border-grayLighter z-50"
+    class="top-0 left-0 flex-col lg:flex-row container mx-auto py-0 h-[93px] flex lg:justify-between items-center lg:border-b lg:border-grayLighter z-50 gap-y-5"
   >
     <router-link to="/feed-videos">
-      <div class="h-[50px] w-[250px] ml-[-20px]">
+      <div class="h-[50px] w-[250px] ml-[-20px] mt-5 lg:mt-0">
         <img src="../assets/videotopia.png" alt="logo header" />
       </div>
     </router-link>
-    <div class="flex items-center relative">
+
+    <div class="flex items-center relative w-10/12 lg:w-1/3">
       <input
         :value="searchTerm"
         type="text"
-        class="bg-primaryDarker border-grayLighter border border-solid rounded-md p-1.5 w-[450px] pl-2 text-grayLighter order-2"
+        class="bg-primaryDarker border-grayLighter border border-solid rounded-md p-1.5 w-full pl-2 text-grayLighter order-2"
         placeholder="Search Videos"
         @input="$emit('updateSearchTerm', $event.target.value)"
       />
@@ -23,7 +24,7 @@
     </div>
 
     <div
-      class="flex items-center gap-5 border-grayLighter border border-solid rounded-md p-2 px-3 relative hover:bg-primaryDarker"
+      class="items-center gap-5 border-grayLighter border border-solid rounded-md p-2 px-3 relative hover:bg-primaryDarker hidden md:block"
     >
       <div class="flex-shrink-0 order-1">
         <font-awesome-icon
