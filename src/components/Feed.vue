@@ -11,23 +11,24 @@
     <LoadingSpinner :is-loading="isLoading" />
 
     <modal :title="modalTitle" v-if="isModalOpen" @close="closeModal">
-      <!-- Conteúdo do modal -->
-      <div
-        class="relative h-[220px] w-[300px] flex justify-center items-center"
-      >
+      <div class="relative h-[350px] w-[350px]">
         <img
           :src="modalImageUrl"
           :alt="modal"
           style="object-fit: cover"
-          class="rounded-lg cursor-pointer justify-center items-center"
+          class="rounded-lg cursor-pointer"
         />
-        <!-- Posicionando o ícone no meio da div -->
-        <font-awesome-icon
-          icon="play"
-          beat-fade
-          class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-redPrimary cursor-pointer h-10 w-10 hover:scale-110 transform transition-transform duration-300 ease-in-out"
-          style="object-fit: cover"
-        />
+        <a
+          :href="'https://www.youtube.com/watch?v=' + clickedVideoId"
+          target="_blank"
+        >
+          <font-awesome-icon
+            icon="play"
+            beat-fade
+            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-redPrimary cursor-pointer h-10 w-10 hover:scale-110 transform transition-transform duration-300 ease-in-out rounded-sm"
+            style="object-fit: cover"
+          />
+        </a>
       </div>
     </modal>
 
@@ -35,7 +36,9 @@
       class="flex flex-col items-center gap-3 lg:flex-row gap lg:flex-wrap lg:justify-center lg:gap-10 lg:mt-10"
     >
       <VideoItem
-        v-for="video in videos"
+        v-for="video in videos.filter((item) =>
+          item.snippet.title.includes(searchTerm)
+        )"
         :key="video.id"
         :video="video"
         @open-modal="openModal"
@@ -48,47 +51,34 @@
 import VideoItem from "./VideoItem.vue";
 import LoadingSpinner from "./LoadingSpinner.vue";
 import Modal from "./Modal.vue";
-import { searchVideos } from "../api/index.js";
 
 export default {
   name: "AppFeed",
   data() {
     return {
-      videos: [],
-      isLoading: true,
       isModalOpen: false,
       modalTitle: "Detalhes do Vídeo",
       modalImageUrl: "",
+      clickedVideoId: "",
     };
   },
-  created() {
-    this.fetchVideos();
+  props: {
+    isLoading: Boolean,
+    videos: Array,
+    searchTerm: String,
   },
+
   methods: {
-    async fetchVideos() {
-      try {
-        const data = await searchVideos();
-
-        if (!data) {
-          throw new Error("Erro ao buscar vídeos");
-        }
-
-        this.videos = data;
-        this.isLoading = false;
-      } catch (error) {
-        console.error("Erro ao buscar vídeos:", error);
-        this.isLoading = false;
-      }
-    },
-    openModal(imageUrl) {
+    openModal(imageUrl, videoId) {
       this.modalImageUrl = imageUrl;
+      this.clickedVideoId = videoId;
       this.isModalOpen = true;
     },
     closeModal() {
-      console.log("clicou");
       this.isModalOpen = false;
     },
   },
+
   components: {
     VideoItem,
     LoadingSpinner,

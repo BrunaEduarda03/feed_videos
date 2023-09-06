@@ -1,6 +1,6 @@
 <template>
-  <div v-if="isLoading" class="text-walterWhite">
-    <font-awesome-icon icon="circle-notch" spin class="text-walterWhite" />
+  <div v-if="isLoading" class="fixed inset-0 flex justify-center items-center">
+    <font-awesome-icon icon="circle-notch" spin class="text-primary text-5xl" />
   </div>
 </template>
 

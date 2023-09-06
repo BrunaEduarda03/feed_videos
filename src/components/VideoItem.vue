@@ -5,7 +5,9 @@
         :src="video.snippet.thumbnails.medium.url"
         :alt="video.snippet.title"
         class="hover:scale-110 transform transition-transform duration-300 ease-in-out rounded-lg cursor-pointer"
-        @click="openModal(video.snippet.thumbnails.medium.url)"
+        @click="
+          openModal(video.snippet.thumbnails.medium.url, video.id.videoId)
+        "
         style="object-fit: cover"
       />
       <h2 class="text-walterWhite pt-3">{{ video.snippet.title }}</h2>
@@ -20,8 +22,8 @@ export default {
     video: Object,
   },
   methods: {
-    openModal(imageUrl) {
-      this.$emit("open-modal", imageUrl); // Emita o evento para abrir a modal com a URL da imagem
+    openModal(imageUrl, videoId) {
+      this.$emit("open-modal", imageUrl, videoId); // Emita o evento com imageUrl e videoId
     },
   },
 };
