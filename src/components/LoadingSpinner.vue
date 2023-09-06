@@ -1,5 +1,8 @@
 <template>
-  <div v-if="isLoading" class="fixed inset-0 flex justify-center items-center">
+  <div
+    v-if="isLoading"
+    class="fixed inset-0 flex justify-center items-center bg-purpleDark"
+  >
     <font-awesome-icon icon="circle-notch" spin class="text-primary text-5xl" />
   </div>
 </template>

@@ -1,6 +1,9 @@
 <template>
-  <section class="container mx-auto p-5">
-    <div class="flex items-center justify-center mt-10">
+  <section class="container mx-auto p-5 bg-purpleDark h-screen">
+    <div
+      v-if="filteredVideos.length !== 0"
+      class="flex items-center justify-center mt-10"
+    >
       <h2
         class="px-5 font-medium text-grayLighter whitespace-nowrap lg:text-xl flex justify-center"
       >
@@ -31,14 +34,18 @@
         </a>
       </div>
     </modal>
+    <div
+      v-if="filteredVideos.length === 0"
+      class="text-redPrimary font-semibold flex items-center justify-center mt-10"
+    >
+      Ops. Não foram encontrados vídeos correspondentes a pesquisa!
+    </div>
 
     <div
       class="flex flex-col items-center gap-3 lg:flex-row gap lg:flex-wrap lg:justify-center lg:gap-10 lg:mt-10"
     >
       <VideoItem
-        v-for="video in videos.filter((item) =>
-          item.snippet.title.includes(searchTerm)
-        )"
+        v-for="video in filteredVideos"
         :key="video.id"
         :video="video"
         @open-modal="openModal"
@@ -76,6 +83,18 @@ export default {
     },
     closeModal() {
       this.isModalOpen = false;
+    },
+    filterVideos() {
+      return this.videos.filter((item) =>
+        item.snippet.title.includes(this.searchTerm)
+      );
+    },
+  },
+
+  computed: {
+    // Use uma computed property para obter a lista filtrada de vídeos
+    filteredVideos() {
+      return this.filterVideos();
     },
   },
 

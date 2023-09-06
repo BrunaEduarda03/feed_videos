@@ -1,6 +1,6 @@
 <template>
   <header
-    class="flex-col lg:flex-row container mx-auto py-0 h-[93px] flex lg:justify-between items-center lg:border-b lg:border-grayLighter"
+    class="top-0 left-0 flex-col lg:flex-row container mx-auto py-0 h-[93px] flex lg:justify-between items-center lg:border-b lg:border-grayLighter z-50"
   >
     <router-link to="/feed-videos">
       <div class="h-[50px] w-[250px] ml-[-20px]">
@@ -18,7 +18,7 @@
 
       <font-awesome-icon
         icon="magnifying-glass"
-        class="text-walterWhite hover:text-grayPrimary cursor-pointer bg-pinkLighter p-2.5 px-4 rounded-md absolute right-0 top-1/2 transform -translate-y-1/2"
+        class="text-walterWhite hover:text-grayPrimary cursor-pointer bg-primaryDarker p-2 px-2 rounded-md absolute right-1 top-1/2 transform -translate-y-1/2"
       />
     </div>
 
