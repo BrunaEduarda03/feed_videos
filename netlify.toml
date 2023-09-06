@@ -2,3 +2,12 @@
 from= "/*"
 to = "/index.html"
 status = 200
+
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[context.production.environment]
+  VUE_APP_API_KEY="AIzaSyCh6CnLDAy_IAlwKQFf3j_5qBDDQfJCoKI"
+  VUE_APP_API_URL="https://www.googleapis.com/youtube/v3"
+  VUE_APP_CHANNEL_ID ="UC3wtruOTuano-ffje5P7ufQ"
