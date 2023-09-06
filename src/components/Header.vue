@@ -24,15 +24,14 @@
     </div>
 
     <div
-      class="items-center gap-5 border-grayLighter border border-solid rounded-md p-2 px-3 relative hover:bg-primaryDarker hidden md:block"
+      class="items-center gap-5 border-grayLighter border border-solid rounded-md p-2 px-3 relative hover:bg-primaryDarker hidden lg:block"
     >
-      <div class="flex-shrink-0 order-1">
-        <font-awesome-icon
-          icon="bars"
-          @click="toggleMenu"
-          class="text-walterWhite cursor-pointer"
-        />
-      </div>
+      <font-awesome-icon
+        icon="bars"
+        @click="toggleMenu"
+        class="text-walterWhite cursor-pointer"
+      />
+
       <div
         v-if="menuIsOpen"
         class="z-50 absolute top-14 left-0 w-[80px] h-[90px] bg-primaryDarker rounded-lg shadow-md flex flex-col justify-center items-center gap-2"
