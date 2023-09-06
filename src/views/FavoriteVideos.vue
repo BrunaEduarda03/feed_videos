@@ -1,8 +1,8 @@
 <template>
-  <div class="bg-purpleDark h-screen container mx-auto p-5">
+  <div class="bg-purpleDark container mx-auto p-5 flex flex-col">
     <Header />
-    <div className=" flex flex-col mt-5 ">
-      <p className=" text-primaryLighter mt-5 text-xl ">
+    <div className=" mt-5 items-center grow">
+      <p className=" text-primaryLighter mt-5 text-xl  ">
         Você não possui nenhum video Favorito!
       </p>
       <div className=" flex flex-col  mt-5 ">
