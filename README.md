@@ -99,7 +99,7 @@ Abra [http://localhost:8080](http://localhost:8080) com o seu browser para ver o
 Dados mockados de login para acesso a plataforma: 
 ```bash
       email: "user@example.com",
-      password: "password123",
+      password: "#Password123",
 ```
 
 ### :balance_scale: Licença
