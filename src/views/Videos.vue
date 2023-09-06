@@ -1,6 +1,11 @@
 <template>
   <Header :searchTerm="searchTerm" @updateSearchTerm="updateSearchTerm" />
-  <Feed :videos="videos" :isLoading="isLoading" :searchTerm="searchTerm" />
+  <Feed
+    :videos="videos"
+    :isLoading="isLoading"
+    :searchTerm="searchTerm"
+    class="min-h-screen"
+  />
   <Footer />
 </template>
 
@@ -17,10 +22,6 @@ export default {
     return {
       videos: [],
       isLoading: true,
-      isModalOpen: false,
-      modalTitle: "Detalhes do Vídeo",
-      modalImageUrl: "",
-      clickedVideoId: "",
       searchTerm: "",
     };
   },

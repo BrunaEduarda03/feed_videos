@@ -18,20 +18,22 @@
         <img
           :src="modalImageUrl"
           :alt="modal"
-          style="object-fit: cover; width: 100%; height: 100%"
+          style="object-fit: cover"
           class="rounded-lg cursor-pointer"
+          hidden
         />
-        <a
-          :href="'https://www.youtube.com/watch?v=' + clickedVideoId"
-          target="_blank"
+        <div
+          class="mt-5 flex justify-center items-center"
+          v-if="clickedVideoId"
         >
-          <font-awesome-icon
-            icon="play"
-            beat-fade
-            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-redPrimary cursor-pointer h-10 w-10 hover:scale-110 transform transition-transform duration-300 ease-in-out rounded-sm"
-            style="object-fit: cover"
-          />
-        </a>
+          <iframe
+            width="560"
+            height="315"
+            :src="'https://www.youtube.com/embed/' + clickedVideoId"
+            frameborder="0"
+            allowfullscreen
+          ></iframe>
+        </div>
       </div>
     </modal>
     <div
@@ -67,6 +69,7 @@ export default {
       modalTitle: "Detalhes do Vídeo",
       modalImageUrl: "",
       clickedVideoId: "",
+      description: "",
     };
   },
   props: {
@@ -83,6 +86,7 @@ export default {
     },
     closeModal() {
       this.isModalOpen = false;
+      this.clickedVideoId = " ";
     },
     filterVideos() {
       return this.videos.filter((item) =>
