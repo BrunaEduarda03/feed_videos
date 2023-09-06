@@ -80,7 +80,7 @@ Projeto hospedado: link canto superior a direita!
 Clone o projeto e instale as dependencias do projeto:
 
 ```bash
-git clone git@github.com:BrunaEduarda03/feed_videos.git
+git clone git@github.com:BrunaEduarda03/videotopia.git
 
 npm install
 ```
