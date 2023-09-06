@@ -1,11 +1,7 @@
 <template>
-  <footer>
-    <div
-      className=" container mx-auto w-full h-[1px] bg-grayLighter mt-10 mb-3"
-    ></div>
-    <div
-      className="p-5 flex flex-col justify-center items-center bg-purpleDark"
-    >
+  <footer class="bg-purpleDark fixed bottom-0 left-0 w-full text-center">
+    <div class="container mx-auto w-full h-[1px] bg-grayLighter"></div>
+    <div class="p-5 flex flex-col justify-center items-center">
       <router-link to="/feed-videos">
         <img
           src="../assets/videotopia.png"
