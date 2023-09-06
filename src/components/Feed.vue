@@ -1,9 +1,6 @@
 <template class="bg-green-700">
   <section class="container mx-auto p-5">
-    <div
-      v-if="filteredVideos.length !== 0"
-      class="flex items-center justify-center mt-20 lg:mt-10"
-    >
+    <div class="flex items-center justify-center mt-20 lg:mt-10">
       <h2
         class="px-5 font-medium text-grayLighter whitespace-nowrap lg:text-xl flex justify-center"
       >
@@ -38,7 +35,7 @@
     </modal>
     <div
       v-if="filteredVideos.length === 0"
-      class="text-redPrimary font-semibold flex items-center justify-center mt-20"
+      class="text-redPrimary font-semibold flex text-center items-center justify-center mt-20"
     >
       Ops. Não foram encontrados vídeos correspondentes a pesquisa!
     </div>
